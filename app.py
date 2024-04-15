@@ -7,7 +7,7 @@ app = Flask(__name__)
 #def index():
 #    return render_template('index2.html')
 
-@app.route('/generate_image')
+@app.route('/')
 def generate_image():
     # Insérez ici le code Python pour générer l'image
     from keras.layers import Input
@@ -32,14 +32,9 @@ def generate_image():
     
     # Générer une image avec le modèle chargé
     generated_image = generator_model.predict(noise(1))  # Génère une seule image
-    
-    # Afficher l'image générée
-    plt.imshow(generated_image[0])
-    plt.axis('off')  # Pour désactiver les axes
-    plt.show()
-    
+        
     # Définition du chemin du dossier où enregistrer l'image
-    output_folder = "generated_images"
+    output_folder = "static/images"
     
     # Vérifier si le dossier existe, sinon le créer
     if not os.path.exists(output_folder):
@@ -55,7 +50,7 @@ def generate_image():
     # Renvoyer le fichier image au navigateur
     #return send_file(output_path, mimetype='image/png')
     #return output_path
-    return render_template('index2.html')
+    return render_template('index.html')
     
 if __name__ == '__main__':
     app.run(debug=True)
