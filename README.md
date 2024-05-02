@@ -1,5 +1,5 @@
 # projet_M1
-Interface web du projet M1
+Voici le code du projet M1 2024 développé par César Regrettier et Mickaël Neroda. Ce projet avait pour but de de contruire un modèle d'IA générative afin de générer des designs de vêtement.
 
 ## web_interface
 Dossier cotenant le code de l'interface web qui permet de générer des images avec les modèles entraînés (ou réentraînés) grâce aux fichier ipynb dans le dossier "training_model_fine_tuning"
